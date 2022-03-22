@@ -1,0 +1,7 @@
+{
+  "name": "Dragon Team",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
