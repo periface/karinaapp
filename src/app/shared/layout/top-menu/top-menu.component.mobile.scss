@@ -1,0 +1,21 @@
+@media screen and (min-width: 0px) and (max-width: 599.98px) {
+  .img-topbar{
+    width: 100%;
+  }
+  .separator-menu {
+    padding-left: 20% !important;
+    color: black;
+  }
+  .thebutton {
+    color: black;
+  }
+  .menu-items {
+    display: none;
+  }
+  .resp-menu {
+    display: block;
+  }
+}
+mat-icon {
+  margin-top: 10px;
+}

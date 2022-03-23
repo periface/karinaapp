@@ -1,0 +1,10 @@
+<div *ngIf="this.breadcrumbs.length" class="breadcrumbs-container">
+  <div *ngFor="let item of this.breadcrumbs" class="breadcrumbs">
+    <div class="breadcrumb">
+      <a *ngIf="item.routerUrl" routerLink="{{item.routerUrl}}"
+        >{{item.texto}}</a
+      >
+      <a *ngIf="!item.routerUrl"><strong>{{item.texto}}</strong></a>
+    </div>
+    <span *ngIf="!item.lastElement" class="bread-divider">/</span>
+  </div>

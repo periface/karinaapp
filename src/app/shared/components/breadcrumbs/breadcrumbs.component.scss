@@ -1,0 +1,25 @@
+.breadcrumbs-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  .breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+  .breadcrumb {
+    padding: 1em;
+    .bread-divider {
+      margin-left: 1em;
+      font-size: 1em;
+    }
+  }
+  .breadcrumb.first {
+    padding-left: 0 !important;
+  }
+}
