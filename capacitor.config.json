@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "Dragon Team",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "periface.ionic.teamdragon",
+  "appName": "Dragon Team",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

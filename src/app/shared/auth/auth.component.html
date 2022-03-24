@@ -118,6 +118,7 @@
         </mat-form-field>
       </div>
       <div fxFlex="100" class="text-center" fxFlex.xs="100">
+        <br />
         <ion-button
           ion-button
           [disabled]="!this.currentActiveForm?.valid || this.loading"
@@ -152,20 +153,11 @@
         class="text-center"
         fxFlex.xs="100"
       >
-        <hr />
         <h4>Tambien puedes entrar con:</h4>
-        <ion-button
-          color="tertiary"
-          size="large"
-          (click)="useExternal('facebook')"
-        >
+        <ion-button color="tertiary" (click)="useExternal('facebook')">
           <ion-icon name="logo-facebook"></ion-icon>
         </ion-button>
-        <ion-button
-          color="tertiary"
-          size="large"
-          (click)="useExternal('google')"
-        >
+        <ion-button color="tertiary" (click)="useExternal('google')">
           <ion-icon name="logo-google"></ion-icon>
         </ion-button>
       </div>

@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package periface.ionic.teamdragon;
 
 import com.getcapacitor.BridgeActivity;
 
