@@ -30,7 +30,6 @@ export class AuthComponent extends BaseComponent implements OnInit {
   ip: any;
 
   constructor(
-    public localStorageService: LocalstorageService,
     private formBuilder: FormBuilder,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -50,6 +49,14 @@ export class AuthComponent extends BaseComponent implements OnInit {
   }
   async ngOnInit() {
     this.ip = await this.getIPAddress();
+    console.log(this.localStorageService.userData);
+    if (this.localStorageService.userData) {
+      if (this.localStorageService.userData.registroFinalizado) {
+        this.redirect();
+      } else {
+        this.router.navigateByUrl('registration');
+      }
+    }
   }
 
   async handleLoginForm() {

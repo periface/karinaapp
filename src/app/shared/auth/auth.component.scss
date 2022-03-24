@@ -1,7 +1,65 @@
-mat-form-field {
+.main-container {
+  height: 100%;
+}
+form {
   width: 100%;
+}
+mat-form-field {
+  width: 75%;
 }
 .form-card {
   padding: 5px;
   border-radius: 10px;
+}
+.message-container {
+  color: white;
+  z-index: 9;
+  * > {
+    color: white;
+    z-index: 9;
+  }
+}
+mat-hint,
+form,
+span,
+h1,
+h2,
+p,
+a {
+  color: white !important;
+  z-index: 9 !important;
+}
+label {
+  color: white !important;
+}
+::ng-deep .mat-form-field-label {
+  color: white !important;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: white !important;
+}
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: rgb(255 255 255);
+}
+.logo {
+  width: 90%;
+  z-index: 9;
+  margin: 0 auto;
+
+  margin-bottom: 3em;
+}
+hr {
+  height: 0;
+  border: 1px solid white;
 }

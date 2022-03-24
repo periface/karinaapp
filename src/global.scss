@@ -28,3 +28,28 @@
 .text-center {
   text-align: center;
 }
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+ion-header {
+  position: absolute;
+}
+.background {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(
+      28deg,
+      rgba(0, 0, 0, 0.6951155462184874) 0%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url(/assets/bg1.jpg);
+  opacity: 0.9;
+  background-position: center;
+  background-size: cover;
+  background-position-x: center;
+  position: absolute;
+  z-index: -1;
+}

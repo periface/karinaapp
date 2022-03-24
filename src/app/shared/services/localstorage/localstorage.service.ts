@@ -79,16 +79,10 @@ export class LocalstorageService implements Storage {
       if (value) {
         return JSON.parse(value);
       }
-      return {
-        email: 'a@a.com',
-        nombreCompleto: 'John Doe',
-      };
+      return undefined;
     } catch (error) {
       console.log('Error', error);
-      return {
-        email: 'a@a.com',
-        nombreCompleto: 'John Doe',
-      };
+      return undefined;
     }
   }
 }

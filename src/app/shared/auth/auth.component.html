@@ -1,26 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Iniciar Sesión </ion-title>
+<ion-header class="ion-no-border" collapse="fade" [translucent]="true">
+  <ion-toolbar translucent="true">
+    <!-- <ion-title> EMPIEZA EL RETO </ion-title> -->
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <div class="main-container">
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column">
+  <div class="background"></div>
+  <div class="main-container" fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column wrap" fxLayoutAlign="center center">
       <div fxFlex="100" class="text-center" fxFlex.xs="100">
+        <ion-img class="logo" src="/assets/logo.png"></ion-img>
         <h2>{{ topTxt }}</h2>
-        <mat-hint *ngIf="this.registerAttempt">
-          <strong>Inicia sesión </strong> ó
-          <strong>crea una cuenta</strong> para tener acceso a <br />
-          todas nuestras conferencias <br /><br />
-        </mat-hint>
       </div>
     </div>
     <form
       [formGroup]="getFormActive()"
       (ngSubmit)="handleLoginForm()"
-      fxLayout="row wrap"
-      fxLayoutAlign="center center"
+      fxLayout="column wrap"
+      fxLayoutAlign="center stretch"
       fxLayout.xs="column"
     >
       <div
@@ -122,51 +118,56 @@
         </mat-form-field>
       </div>
       <div fxFlex="100" class="text-center" fxFlex.xs="100">
-        <button
+        <ion-button
+          ion-button
           [disabled]="!this.currentActiveForm?.valid || this.loading"
           type="submit"
-          mat-raised-button
-          color="accent"
         >
           {{ this.btnTxt }}
-        </button>
-        <p>
-          {{ noAccountMsg }}
-          <a
-            href="javascript:void(0)"
-            (click)="
-              toggleForm(this.formActive === 'login' ? 'register' : 'login')
-            "
-            >{{ callToAction }}</a
-          >
-        </p>
-        <p>
+        </ion-button>
+        <p *ngIf="this.formActive !== 'register'">
           <a href="javascript:void(0)" (click)="toggleForm('recover')"
             >Olvide mi contraseña</a
           >
         </p>
         <p>
-          <a routerLink="/politica-privacidad">Política de Privacidad</a>
+          {{ noAccountMsg }} <br /><br />
+          <ion-button
+            color="secondary"
+            href="javascript:void(0)"
+            (click)="
+              toggleForm(this.formActive === 'login' ? 'register' : 'login')
+            "
+            >{{ callToAction }}</ion-button
+          >
         </p>
+
+        <!-- <p>
+          <a routerLink="/politica-privacidad">Política de Privacidad</a>
+        </p> -->
       </div>
-      <div fxFlex="100" class="text-center" fxFlex.xs="100">
+      <div
+        *ngIf="this.formActive !== 'register'"
+        fxFlex="100"
+        class="text-center"
+        fxFlex.xs="100"
+      >
+        <hr />
         <h4>Tambien puedes entrar con:</h4>
-        <button
-          type="button"
+        <ion-button
+          color="tertiary"
+          size="large"
           (click)="useExternal('facebook')"
-          mat-raised-button
-          color="primary"
         >
-          Facebook
-        </button>
-        <button
-          type="button"
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button
+          color="tertiary"
+          size="large"
           (click)="useExternal('google')"
-          mat-raised-button
-          color="accent"
         >
-          Google
-        </button>
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
       </div>
     </form>
   </div>
