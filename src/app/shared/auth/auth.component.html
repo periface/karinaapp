@@ -9,7 +9,7 @@
     <div fxLayout="column wrap" fxLayoutAlign="center center">
       <div fxFlex="100" class="text-center" fxFlex.xs="100">
         <ion-img class="logo" src="/assets/logo.png"></ion-img>
-        <h2>{{ topTxt }}</h2>
+        <!-- <h2>{{ topTxt }}</h2> -->
       </div>
     </div>
     <form
@@ -147,7 +147,7 @@
           <a routerLink="/politica-privacidad">Política de Privacidad</a>
         </p> -->
       </div>
-      <div
+      <!-- <div
         *ngIf="this.formActive !== 'register'"
         fxFlex="100"
         class="text-center"
@@ -160,7 +160,7 @@
         <ion-button color="tertiary" (click)="useExternal('google')">
           <ion-icon name="logo-google"></ion-icon>
         </ion-button>
-      </div>
+      </div> -->
     </form>
   </div>
 </ion-content>
