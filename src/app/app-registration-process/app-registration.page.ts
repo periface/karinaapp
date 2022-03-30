@@ -3,6 +3,7 @@ import { UserService } from './../shared/services/user-service/user.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { BaseComponent } from '../shared/components/base-component.component';
+import { Router } from '@angular/router';
 @Component({
   templateUrl: './app-registration.page.html',
   styleUrls: ['./app-registration.page.scss'],
@@ -149,7 +150,7 @@ export class AppRegistrationPage
     },
   ];
   user: UserInfoModel;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     super();
     this.userService
       .getUserInfoByUId(this.localStorageService.getUserId)
@@ -198,6 +199,7 @@ export class AppRegistrationPage
       await this.userService.saveUserData(this.user.id, this.user);
       this.loading = false;
       //ROUTER
+      this.router.navigateByUrl('main-app/tab1');
     } catch (error) {
       this.loading = false;
       this.showMessage('Ocurrió un error...', '', {
