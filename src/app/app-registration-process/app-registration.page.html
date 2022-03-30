@@ -6,20 +6,145 @@
 
 <ion-content [fullscreen]="true">
   <div class="background"></div>
-  <div
-    fxLayout="column wrap"
-    fxLayoutAlign="center center"
-    class="initial-message text-center"
-  >
-    <ion-img class="logo" src="/assets/klcrojo.svg"></ion-img>
-    <h1 class="text-center">BIENVENIDO(A)</h1>
-    <h2 class="text-center">¿Estas listo para un cambio en tu vida?</h2>
-    <p class="text-center">
-      Para empezar con tu plan de entrenamiento primero necesitamos algunos
-      datos
-    </p>
 
-    <!-- <button mat-raised-button color="primary">Empezar</button> -->
-    <ion-button>Empezar</ion-button>
-  </div>
+  <ion-slides #slider pager="true" [options]="slideOpts">
+    <ion-slide>
+      <div
+        fxLayout="column wrap"
+        fxLayoutAlign="center center"
+        class="initial-message text-center"
+      >
+        <ion-img class="logo" src="/assets/klcrojo.svg"></ion-img>
+        <h1 class="text-center">BIENVENIDO(A)</h1>
+        <h2 class="text-center">
+          Para empezar con tu plan de entrenamiento primero necesitamos algunos
+          datos
+        </h2>
+        <!-- <button mat-raised-button color="primary">Empezar</button> -->
+        <ion-button (click)="loadNext()">Empezar</ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div *ngIf="this.user" fxFlex="100">
+          <ion-img class="sexo" src="/assets/sexo.png"></ion-img>
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Sexo</ion-label>
+            </ion-list-header>
+            <ion-radio-group [(ngModel)]="this.user.sexo" value="masculino">
+              <ion-item class="bg-transparent">
+                <ion-label>Masculino</ion-label>
+                <ion-radio slot="start" value="masculino"></ion-radio>
+              </ion-item>
+
+              <ion-item class="bg-transparent">
+                <ion-label>Femenino</ion-label>
+                <ion-radio slot="start" value="femenino"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </div>
+        <div fxFlex="100">
+          <ion-button (click)="loadPrev()">Volver</ion-button>
+          <ion-button [disabled]="this.loading" (click)="saveAndNext()"
+            >Siguiente</ion-button
+          >
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div *ngIf="this.user" fxFlex="100">
+          <ion-img class="peso" src="/assets/pesas.png"></ion-img>
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Peso</ion-label>
+            </ion-list-header>
+            <ion-item class="input-text">
+              <!-- Number type input -->
+              <ion-input
+                [(ngModel)]="this.user.peso"
+                type="number"
+                value="85"
+              ></ion-input>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div fxFlex="100">
+          <ion-button (click)="loadPrev()">Volver</ion-button>
+          <ion-button (click)="saveAndNext()">Siguiente</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div *ngIf="this.user" fxFlex="100">
+          <ion-img class="estatura-img" src="/assets/estatura.png"></ion-img>
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Estatura</ion-label>
+            </ion-list-header>
+            <ion-item class="input-text estatura">
+              <!-- Number type input -->
+              <ion-input
+                [(ngModel)]="this.user.estatura"
+                type="number"
+                step="5"
+                value="175"
+              ></ion-input>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div fxFlex="100">
+          <ion-button (click)="loadPrev()">Volver</ion-button>
+          <ion-button (click)="saveAndNext()">Siguiente</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div *ngIf="this.user" fxFlex="100">
+          <ion-img class="estatura-img" src="/assets/estatura.png"></ion-img>
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Salud</ion-label>
+            </ion-list-header>
+            <ion-item class="transparent">
+              <p>¿Padeces alguna de estas enfermedades?</p>
+            </ion-item>
+            <ion-item
+              *ngFor="let item of enfermedadesCronicas"
+              class="input-text estatura"
+            >
+              <ion-label>{{item.name}}</ion-label>
+              <ion-checkbox
+                [(ngModel)]="item.checked"
+                color="primary"
+              ></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div fxFlex="100">
+          <ion-button (click)="loadPrev()">Volver</ion-button>
+          <ion-button (click)="saveAndNext()">Siguiente</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div
+        fxLayout="column wrap"
+        fxLayoutAlign="center center"
+        class="initial-message text-center"
+      >
+        <ion-img class="logo" src="/assets/klcrojo.svg"></ion-img>
+        <h1 class="text-center">GRACIAS</h1>
+        <h2 class="text-center">
+
+        </h2>
+        <!-- <button mat-raised-button color="primary">Empezar</button> -->
+        <ion-button (click)="loadNext()">Empezar</ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

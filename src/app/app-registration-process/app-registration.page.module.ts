@@ -6,7 +6,7 @@ import { AppRegistrationPage } from './app-registration.page';
 import { AppRegistrationRoutingModule } from './app-registration-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularMaterialModule } from '../shared/angular-material.module';
-
+import { SwiperModule } from 'swiper/angular';
 @NgModule({
   imports: [
     IonicModule,
@@ -15,6 +15,7 @@ import { AngularMaterialModule } from '../shared/angular-material.module';
     AppRegistrationRoutingModule,
     FlexLayoutModule,
     AngularMaterialModule,
+    SwiperModule
   ],
   declarations: [AppRegistrationPage],
 })

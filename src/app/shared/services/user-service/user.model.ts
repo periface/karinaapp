@@ -1,30 +1,18 @@
 import { Interface } from 'readline';
 
 export interface UserInfoModel {
-  actividadEconomica: string;
-  ciudad: string;
-  discapacidad: string;
-  email: string;
-  esEmpresario: string;
-  esEstudiante: string;
-  esEstudianteEn: string;
-  esEstudianteEnEspecificar: string;
-  esProfesor: string;
-  esProfesorEn: string;
-  esProfesorEnEspecificar: string;
-  estado: string;
-  id: string;
-  nacionalidad: string;
-  nombreCompleto: string;
-  nombreDeEmpresa: string;
-  numeroEmpleados: string;
-  registroFinalizado: boolean;
-  rol: string;
-  sectorEconomico: string;
-  sectorEconomicoEspecificar: string;
-  sexo: string;
-  tipoPersona: string;
-  registerIp: any;
+  enfermedades: string[];
+  ciudad?: string;
+  email?: string;
+  estado?: string;
+  id?: string;
+  nacionalidad?: string;
+  nombreCompleto?: string;
+  registroFinalizado?: boolean;
+  sexo?: string;
+  registerIp?: any;
+  peso: number;
+  estatura: number;
 }
 export interface InitialUserInfo {
   email: string;

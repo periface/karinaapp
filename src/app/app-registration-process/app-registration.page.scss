@@ -1,5 +1,6 @@
 .initial-message {
   height: 100%;
+  padding: 1em;
 }
 .initial-message > h1,
 h2,
@@ -10,4 +11,88 @@ p {
 .logo {
   width: 50%;
   z-index: 9;
+}
+.sexo {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 75px;
+  padding: 3px;
+  box-shadow: 2px 12px 48px 9px rgb(218, 0, 0);
+  background: black;
+}
+.peso {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 75px;
+  padding: 3px;
+  box-shadow: 2px 12px 48px 9px rgb(218, 0, 0);
+  background: rgba(0, 0, 0, 0.493);
+}
+.estatura-img {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 75px;
+  padding: 3px;
+  box-shadow: 2px 12px 48px 9px rgb(218, 0, 0);
+  background: rgb(0, 0, 0);
+}
+.swiper-container {
+  height: 100%;
+}
+.transparent {
+  --background: transparent!important;
+  p{
+    color: white;
+    width: 100%;
+    font-size: 1.2em;
+  }
+}
+ion-list {
+  width: 100%;
+  background: transparent;
+  ion-item {
+    border-radius: 10px;
+    margin-bottom: 1em;
+    --background: white;
+  }
+  ion-list-header {
+    color: white;
+    padding-left: 0;
+    margin-bottom: 1em;
+    ion-label {
+      font-size: 2em !important;
+      font-weight: 500 !important;
+    }
+  }
+  margin-bottom: 1em;
+}
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+  color: white;
+}
+.input-text {
+  width: 85%;
+  margin: 0 auto;
+  ion-input::after {
+    content: "kg";
+  }
+}
+.input-text.estatura {
+  ion-input::after {
+    content: "cm";
+  }
+}
+.bg-transparent {
+  width: 85%;
+  margin: 0 auto;
+}
+.example-radio-button {
+  margin: 5px;
+  color: white;
+}
+label {
+  color: white;
 }
