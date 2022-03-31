@@ -1,3 +1,4 @@
+import { LocalStorageLocations } from './../shared/services/localstorage/localstorage.constants';
 import { UserInfoModel } from './../shared/services/user-service/user.model';
 import { UserService } from './../shared/services/user-service/user.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
@@ -198,6 +199,14 @@ export class AppRegistrationPage
       this.user.registroFinalizado = true;
       await this.userService.saveUserData(this.user.id, this.user);
       this.loading = false;
+      this.localStorageService.setItem(
+        LocalStorageLocations.USER_ACCOUNT_INFO,
+        JSON.stringify(this.user)
+      );
+      this.localStorageService.setItem(
+        LocalStorageLocations.USER_SURVEY_FINISHED,
+        JSON.stringify(this.user.registroFinalizado)
+      );
       //ROUTER
       this.router.navigateByUrl('main-app/tab1');
     } catch (error) {

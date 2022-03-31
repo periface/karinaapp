@@ -5,11 +5,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Configuración</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Configuración app"></app-explore-container>
+  <div class="options-list container">
+    <ion-item (click)="logOut()" class="ion-activated dark-light">
+      <ion-icon name="exit-outline" slot="start"></ion-icon>
+      <ion-label>Cerrar Sesión</ion-label>
+    </ion-item>
+  </div>
 </ion-content>

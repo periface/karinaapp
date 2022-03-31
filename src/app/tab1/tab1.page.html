@@ -1,17 +1,25 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      BIENVENIDO(A)
-    </ion-title>
+    <ion-title> BIENVENIDO(A) </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">BIENVENIDO(A)</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div fxLayout="row wrap">
+    <ion-card class="dark-light user-info" fxFlex.xs="100" fxFlex="50">
+      <ion-card-content>
+        <h3>Hola {{this.user.nombreCompleto}}</h3>
+      </ion-card-content>
+    </ion-card>
 
-  <app-explore-container name="PAGINA DE BIENVENIDA"></app-explore-container>
+    <ion-card class="dark-light bg bg-rutinas" fxFlex.xs="100" fxFlex="50">
+      <ion-card-content class="text-center"> Mis Rutinas </ion-card-content>
+    </ion-card>
+    <ion-card class="dark-light bg bg-dietas" fxFlex.xs="100" fxFlex="50">
+      <ion-card-content class="text-center"> Mis Comidas </ion-card-content>
+    </ion-card>
+    <ion-card class="dark-light bg bg-ejercicios" fxFlex.xs="100" fxFlex="50">
+      <ion-card-content class="text-center"> Ejercicios </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

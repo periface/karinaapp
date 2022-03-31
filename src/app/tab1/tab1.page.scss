@@ -1,2 +1,44 @@
-ion-title {
+// ion-card-content {
+//   color: #a247ec;
+// }
+// ion-card {
+//   --background: #a247ec;
+// }
+ion-card {
+  min-height: 20vh;
+  align-items: center;
+  align-self: center;
+  display: flex;
+  border-radius: 18px;
+  justify-content: flex-start;
+  ion-card-content {
+    font-size: 2em !important;
+  }
+}
+ion-card.user-info {
+  align-items: flex-start;
+  text-transform: uppercase;
+  --background: transparent !important;
+  min-height: 10vh !important;
+  height: 10vh !important;
+  max-height: 10vh !important;
+  ion-card-content {
+    h3 {
+      font-size: 0.8em !important;
+    }
+  }
+}
+.bg {
+  background-position: right !important;
+  background-size: 35%;
+  background-repeat: no-repeat !important;
+}
+.bg-rutinas {
+  --background: #23252e url(/assets/strongman.png) !important;
+}
+.bg-dietas {
+  --background: #23252e url(/assets/healthy-food.png) !important;
+}
+.bg-ejercicios {
+  --background: #23252e url(/assets/book.png) !important;
 }
