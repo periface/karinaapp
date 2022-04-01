@@ -1,44 +1,63 @@
-// ion-card-content {
-//   color: #a247ec;
-// }
-// ion-card {
-//   --background: #a247ec;
-// }
+ion-title {
+  padding-left: 0;
+}
+.user-info {
+  --background: transparent;
+  color: white;
+}
+.welcome-message {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+  border-bottom: 4px solid rgb(255 0 0 / 21%);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  width: 100%;
+  padding: 0.5em;
+  color: white;
+  text-align: center;
+  background: linear-gradient(28deg, rgb(0 0 0 / 32%) 0%, black 100%),
+    url(/assets/fondo-inicio.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1em;
+  box-shadow: 2px -8px 25px 0px rgb(255 0 0 / 75%);
+  img {
+    width: 30%;
+  }
+}
 ion-card {
-  min-height: 20vh;
+  min-height: 30vh;
   align-items: center;
   align-self: center;
   display: flex;
-  border-radius: 18px;
   justify-content: flex-start;
+  box-shadow: 2px 1px 2px 0px rgb(255 255 255 / 75%);
   ion-card-content {
-    font-size: 2em !important;
-  }
-}
-ion-card.user-info {
-  align-items: flex-start;
-  text-transform: uppercase;
-  --background: transparent !important;
-  min-height: 10vh !important;
-  height: 10vh !important;
-  max-height: 10vh !important;
-  ion-card-content {
-    h3 {
-      font-size: 0.8em !important;
-    }
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    box-shadow: inset 74px 160px 50px 0px rgb(141 0 0 / 76%);
+    background: transparent;
+    border-top-right-radius: 24px;
   }
 }
 .bg {
-  background-position: right !important;
-  background-size: 35%;
+  background-position: top;
+  background-size: cover;
   background-repeat: no-repeat !important;
+  display: flex;
+  align-items: flex-end;
 }
 .bg-rutinas {
-  --background: #23252e url(/assets/strongman.png) !important;
+  --background: url(/assets/rutinas.jpg) !important;
 }
 .bg-dietas {
-  --background: #23252e url(/assets/healthy-food.png) !important;
+  --background: url(/assets/healthy-food.jpg) !important;
 }
 .bg-ejercicios {
-  --background: #23252e url(/assets/book.png) !important;
+  --background: url(/assets/book.jpg) !important;
+}
+.bg-progreso {
+  --background: url(/assets/progreso.jpg) !important;
 }

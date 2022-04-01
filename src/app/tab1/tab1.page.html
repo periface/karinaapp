@@ -1,24 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> BIENVENIDO(A) </ion-title>
+    <ion-title>
+      <ion-item class="user-info">
+        <ion-avatar slot="start">
+          <img src="/assets/user.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{this.user.nombreCompleto}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="danger">
+        <ion-icon slot="icon-only" name="cog-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div fxLayout="row wrap">
-    <ion-card class="dark-light user-info" fxFlex.xs="100" fxFlex="50">
-      <ion-card-content>
-        <h3>Hola {{this.user.nombreCompleto}}</h3>
-      </ion-card-content>
-    </ion-card>
+  <div class="welcome-message">
+    <img src="/assets/klcrojo.svg" alt="" />
+    <h3>Bienvenido(a)</h3>
+  </div>
 
-    <ion-card class="dark-light bg bg-rutinas" fxFlex.xs="100" fxFlex="50">
+  <div class="background-menu"></div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
+    <ion-card class="dark-light bg bg-rutinas" fxFlex.xs="40" fxFlex="40">
       <ion-card-content class="text-center"> Mis Rutinas </ion-card-content>
     </ion-card>
-    <ion-card class="dark-light bg bg-dietas" fxFlex.xs="100" fxFlex="50">
-      <ion-card-content class="text-center"> Mis Comidas </ion-card-content>
+    <ion-card class="dark-light bg bg-dietas" fxFlex.xs="40" fxFlex="40">
+      <ion-card-content class="text-center">
+        Mis Comidas
+      </ion-card-content> </ion-card
+    ><ion-card class="dark-light bg bg-progreso" fxFlex.xs="40" fxFlex="40">
+      <ion-card-content class="text-center"> Mi Progreso </ion-card-content>
     </ion-card>
-    <ion-card class="dark-light bg bg-ejercicios" fxFlex.xs="100" fxFlex="50">
+    <ion-card class="dark-light bg bg-ejercicios" fxFlex.xs="40" fxFlex="40">
       <ion-card-content class="text-center"> Ejercicios </ion-card-content>
     </ion-card>
   </div>

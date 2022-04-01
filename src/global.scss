@@ -10,6 +10,12 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
+
+@font-face {
+  font-family: "minimalist";
+  src: url(/assets/minimalist/MINIMALIST.otf) format("opentype");
+}
+
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -27,6 +33,10 @@
 // global.scss
 @import "~swiper/scss";
 @import "~@ionic/angular/css/ionic-swiper";
+* {
+  font-family: minimalist;
+  letter-spacing: 1px;
+}
 .text-center {
   text-align: center;
 }
@@ -101,4 +111,27 @@ ion-content {
   background-position-x: center;
   position: absolute;
   z-index: -1;
+}
+.background-menu {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(28deg, rgba(0, 0, 0, 0.6951155462) 0%, black 100%),
+    url(/assets/karina1.jpg);
+  opacity: 1;
+  background-position: center;
+  background-size: cover;
+  background-position-x: center;
+  position: fixed;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+/*FONT FIXES*/
+.sc-ion-label-md-s h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 35px;
 }
