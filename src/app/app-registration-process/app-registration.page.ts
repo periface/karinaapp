@@ -150,6 +150,23 @@ export class AppRegistrationPage
       checked: false,
     },
   ];
+  objetivos = [
+    {
+      name: 'Bajar de peso',
+      value: 'bajarpeso',
+      checked: false,
+    },
+    {
+      name: 'Musculación',
+      value: 'musculacion',
+      checked: false,
+    },
+    {
+      name: 'Definir',
+      value: 'definicion',
+      checked: false,
+    },
+  ];
   user: UserInfoModel;
   constructor(private userService: UserService, private router: Router) {
     super();
@@ -175,12 +192,21 @@ export class AppRegistrationPage
           }
         })
         .filter((a) => a !== undefined);
-      console.log(enfermedades);
+      const objetivos = this.objetivos
+        .map((a) => {
+          if (a.checked) {
+            return a.value;
+          }
+        })
+        .filter((a) => a !== undefined);
+      console.log(objetivos);
 
       if (enfermedades.length > 0) {
         this.user.enfermedades = enfermedades;
       }
-
+      if (objetivos.length > 0) {
+        this.user.objetivos = objetivos;
+      }
       this.loading = true;
       await this.userService.saveUserData(this.user.id, this.user);
       this.loading = false;

@@ -111,10 +111,39 @@
               <ion-label>Salud</ion-label>
             </ion-list-header>
             <ion-item class="transparent">
-              <p>¿Padeces alguna de estas enfermedades?</p>
+              <p class="ion-text-center">¿Padeces alguna de estas enfermedades?</p>
             </ion-item>
             <ion-item
               *ngFor="let item of enfermedadesCronicas"
+              class="input-text estatura"
+            >
+              <ion-label>{{item.name}}</ion-label>
+              <ion-checkbox
+                [(ngModel)]="item.checked"
+                color="primary"
+              ></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div fxFlex="100">
+          <ion-button (click)="loadPrev()">Volver</ion-button>
+          <ion-button (click)="saveAndNext()">Siguiente</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div *ngIf="this.user" fxFlex="100">
+          <ion-img class="estatura-img" src="/assets/estatura.png"></ion-img>
+          <ion-list>
+            <ion-list-header>
+              <ion-label>Objetivos</ion-label>
+            </ion-list-header>
+            <ion-item class="transparent">
+              <p class="ion-text-center">¿Cual es tu objetivo?</p>
+            </ion-item>
+            <ion-item
+              *ngFor="let item of objetivos"
               class="input-text estatura"
             >
               <ion-label>{{item.name}}</ion-label>
@@ -139,9 +168,7 @@
       >
         <ion-img class="logo" src="/assets/klcrojo.svg"></ion-img>
         <h1 class="text-center">GRACIAS</h1>
-        <h2 class="text-center">
-
-        </h2>
+        <h2 class="text-center"></h2>
         <!-- <button mat-raised-button color="primary">Empezar</button> -->
         <ion-button (click)="end()">Empezar</ion-button>
       </div>

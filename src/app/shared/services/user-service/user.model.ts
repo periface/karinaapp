@@ -1,6 +1,7 @@
 import { Interface } from 'readline';
 
 export interface UserInfoModel {
+  objetivos: string[];
   enfermedades: string[];
   ciudad?: string;
   email?: string;

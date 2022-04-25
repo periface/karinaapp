@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Dragon Team</string>
-    <string name="title_activity_main">Dragon Team</string>
-    <string name="package_name">periface.ionic.teamdragon</string>
-    <string name="custom_url_scheme">periface.ionic.teamdragon</string>
-</resources>
